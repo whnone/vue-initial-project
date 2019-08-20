@@ -3,5 +3,5 @@ const list = route => require.ensure([], () => route(require('@/pages/product-ma
 export default [{
   path: 'product-manage/list',
   component: list,
-  meta: {keepAlive: '', href: '', title: '商品列表', name: 'PRODUCT_LIST', index: '1-1'}
+  meta: {keepAlive: '', href: '', title: '商品列表', name: 'PRODUCT_LIST', index: '1'}
 }]

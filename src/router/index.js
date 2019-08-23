@@ -1,24 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+import commonRotus from './common-manage'
 import productRotus from './product-manage'
-import home from '../pages/home.vue'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: `/zh-CN`,
-      component: home,
-      children: [
-        ...productRotus
-      ]
+const routes = []
+
+routes.push(...[
+  ...commonRotus,
+  ...productRotus
+])
+
+// 路由配置
+const router = new Router({
+  routes,
+  base: location.pathname,
+  scrollBehavior: (to, from, savedPosition) => {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
     }
-  ]
+  }
 })
+
+export default router

@@ -1,7 +1,9 @@
 
 <template lang="jade">
   div.wrap
-    h1.wrapTitle aa
+    h1.wrapTitle(
+      @click="toPro"
+    ) aa
 </template>
 <script>
 export default {
@@ -10,11 +12,11 @@ export default {
       Menus: []
     }
   },
-  watch: {},
-  created () {},
-  mounted () {},
-  computed: {},
-  methods: {}
+  methods: {
+    toPro () {
+      this.$router.push('./product-manage/list')
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

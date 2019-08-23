@@ -6,17 +6,15 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'link'
+      msg: 'HelloWorld.vue'
     }
   },
   methods: {
     link () {
       console.log(this)
-      this.$router.push('../pages/product-manage/list')
-      // this.$route.replace('@pages/')
+      this.$router.push('./pages/home')
     }
   }
 }

@@ -1,24 +1,22 @@
 <template>
-    <div class="login-content">
-        <input type="text" v-model="form.name">
-        <input type="text" v-model="form.password">
-        <button @click="sumit">提交</button>
-    </div>
+    <el-button @click="toResoucre">
+      click
+    </el-button>
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                form: {
-                    name: '',
-                    password: ''
-                }
-            }
-        },
-        methods: {
-            sumit () {
-                console.log(this.form)
-            }
-        }
+export default {
+  data () {
+    return {
+      form: {
+        name: '',
+        password: ''
+      }
     }
+  },
+  methods: {
+    toResoucre () {
+      this.$router.push('./pages/resource-manage/resource')
+    }
+  }
+}
 </script>

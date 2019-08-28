@@ -5,10 +5,17 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import VueCropper from 'vue-cropper'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.use(VueCropper)
+
+router.beforeEach((to, from, next) => {
+  // console.log(from, '->', to)
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({

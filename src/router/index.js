@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import commonRotus from './common-manage'
 import productRotus from './product-manage'
 import resourceRoutes from './resource-manage'
+import editorRoutes from './editor-manage'
 
 Vue.use(Router)
 
@@ -12,7 +13,8 @@ const routes = []
 routes.push(...[
   ...commonRotus,
   ...productRotus,
-  ...resourceRoutes
+  ...resourceRoutes,
+  ...editorRoutes
 ])
 
 // 路由配置

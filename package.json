@@ -16,11 +16,15 @@
   "dependencies": {
     "element-ui": "^2.9.1",
     "express": "^4.17.1",
+    "highlight.js": "^9.15.10",
     "jade": "^1.11.0",
     "node-sass": "^4.12.0",
+    "quill-image-drop-module": "^1.0.3",
+    "quill-image-resize-module": "^3.0.0",
     "sass-loader": "^7.1.0",
     "vm-editor": "^0.1.6",
     "vue": "^2.5.2",
+    "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.1"
   },

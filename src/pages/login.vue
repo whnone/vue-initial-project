@@ -16,7 +16,8 @@ export default {
   methods: {
     toResoucre () {
       // this.$router.push('./pages/resource-manage/resource')
-      this.$router.push('./pages/editor-manage/editor')
+      // this.$router.push('./pages/editor-manage/editor')
+      this.$router.push('./pages/editor-manage/editor-quill')
     }
   }
 }

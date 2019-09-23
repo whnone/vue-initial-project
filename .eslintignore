@@ -3,3 +3,5 @@
 /dist/
 /*.js
 /test/unit/coverage/
+/src/components/vue-quill-editor/ssr.js
+/src/components/vue-quill-editor/index.js

@@ -8,7 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import VueCropper from 'vue-cropper'
 
 // request VueQuillEitor
-import VueQuillEditor from 'vue-quill-editor'
+// import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
@@ -17,7 +17,7 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(VueCropper)
-Vue.use(VueQuillEditor)
+// Vue.use(VueQuillEditor)
 
 router.beforeEach((to, from, next) => {
   // console.log(from, '->', to)

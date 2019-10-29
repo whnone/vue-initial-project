@@ -21,11 +21,18 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    // allow async-await
-    'generator-star-spacing': 'off',
-    // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-unused-vars': 'off',
-    'space-before-function-paren': 0
+
+    'no-unused-vars': 0,
+
+    'arrow-parens': 0,
+    
+    'generator-star-spacing': 0,
+
+    'indent': 0,
+
+    'no-extend-native': 0,
+
+    'space-before-function-paren': 0,
   }
 }

@@ -6,6 +6,9 @@
     <el-button @click="toResoucre">
       test
     </el-button>
+    <el-button @click="toMap">
+      MAP
+    </el-button>
   </div>
 </template>
 <script>
@@ -26,6 +29,9 @@ export default {
     },
     toResoucre () {
       this.$router.push('./pages/product-manage/list')
+    },
+    toMap () {
+      this.$router.push('./pages/map-manage/map')
     }
   }
 }

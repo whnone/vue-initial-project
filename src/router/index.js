@@ -5,6 +5,7 @@ import commonRotus from './common-manage'
 import productRotus from './product-manage'
 import resourceRoutes from './resource-manage'
 import editorRoutes from './editor-manage'
+import mapRoutes from './map-manage'
 
 Vue.use(Router)
 
@@ -14,7 +15,8 @@ routes.push(...[
   ...commonRotus,
   ...productRotus,
   ...resourceRoutes,
-  ...editorRoutes
+  ...editorRoutes,
+  ...mapRoutes
 ])
 
 // 路由配置

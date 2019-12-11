@@ -20,7 +20,6 @@ Vue.use(VueCropper)
 // Vue.use(VueQuillEditor)
 
 router.beforeEach((to, from, next) => {
-  // console.log(from, '->', to)
   next()
 })
 

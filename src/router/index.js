@@ -6,6 +6,7 @@ import productRotus from './product-manage'
 import resourceRoutes from './resource-manage'
 import editorRoutes from './editor-manage'
 import mapRoutes from './map-manage'
+import form from './form-manage'
 
 Vue.use(Router)
 
@@ -16,7 +17,8 @@ routes.push(...[
   ...productRotus,
   ...resourceRoutes,
   ...editorRoutes,
-  ...mapRoutes
+  ...mapRoutes,
+  ...form
 ])
 
 // 路由配置

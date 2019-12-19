@@ -6,9 +6,8 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueCropper from 'vue-cropper'
+import formComponent from './components/A-form'
 
-// request VueQuillEitor
-// import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
@@ -17,7 +16,10 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(VueCropper)
-// Vue.use(VueQuillEditor)
+
+Object.keys(formComponent).forEach((key) => {
+  Vue.component(key, formComponent[key])
+})
 
 router.beforeEach((to, from, next) => {
   next()

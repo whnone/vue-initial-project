@@ -9,6 +9,9 @@
     <el-button @click="toMap">
       MAP
     </el-button>
+    <el-button @click="toForm">
+      form
+    </el-button>
   </div>
 </template>
 <script>
@@ -32,6 +35,9 @@ export default {
     },
     toMap () {
       this.$router.push('./pages/map-manage/map')
+    },
+    toForm() {
+      this.$router.push('./pages/form-manage/form')
     }
   }
 }

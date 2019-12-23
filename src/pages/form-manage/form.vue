@@ -8,6 +8,9 @@
                 <VhInput type="password" v-model="model.password" />
             </VhFormItem>
         </Vhform>
+        <el-button @click="submit">
+            提交
+        </el-button>
     </div>
 </template>
 <script>
@@ -28,6 +31,11 @@
                         message: '请输入密码'
                     }]
                 }
+            }
+        },
+        methods: {
+            submit () {
+                console.log(this.$refs.vhForm)
             }
         }
     }

@@ -1,44 +1,41 @@
 <template>
-  <div>
-    <el-button @click="toEditor">
-      富文本
-    </el-button>
-    <el-button @click="toResoucre">
-      test
-    </el-button>
-    <el-button @click="toMap">
-      MAP
-    </el-button>
-    <el-button @click="toForm">
-      form
-    </el-button>
-  </div>
+    <div id="login">
+        <div>
+            <img class="login-bk" :src="bkUrl" title="黑岩" @click="login">
+        </div>
+    </div>
 </template>
 <script>
+import bkUrl from '../assets/images/BR-SHOOTER.jpg'
 export default {
-  data () {
-    return {
-      form: {
-        name: '',
-        password: ''
-      }
+    data () {
+        return {
+            bkUrl
+        }
+    },
+    methods: {
+        login() {
+            this.$message.success('登陆成功')
+            this.$router.push(`/${this.$lang}/map-manage/map`)
+        }
     }
-  },
-  methods: {
-    toEditor () {
-      // this.$router.push('./pages/resource-manage/resource')
-      // this.$router.push('./pages/editor-manage/editor')
-      this.$router.push('./pages/editor-manage/editor-quill')
-    },
-    toResoucre () {
-      this.$router.push('./pages/product-manage/list')
-    },
-    toMap () {
-      this.$router.push('./pages/map-manage/map')
-    },
-    toForm() {
-      this.$router.push('./pages/form-manage/form')
-    }
-  }
 }
 </script>
+<style scoped>
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 97vh;
+}
+#login>div{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+.login-bk{
+    width: 100%;
+    height: auto;
+}
+</style>

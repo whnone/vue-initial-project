@@ -1,10 +1,19 @@
 /**
- * 引入组件文件-配置路由
+ * 开放媒体：地图、视频、图片、音频
  */
-import map from '../pages/map-manage/map'
+// 地图
+const map = r => require.ensure([], () => r(require('@/pages/map-manage/map')), 'MAP_PAGES')
+// 图片裁切
+const resorce = r => require.ensure([], () => r(require('@/pages/resource-manage/resource')), 'RESORCE')
 
 export default [{
-  path: '/pages/map-manage/map',
+  path: 'map-manage/map',
   component: map,
-  meta: {keepAlive: '', href: '', title: '地图', name: 'MAP', index: '1'}
+  name: 'MAP_PAGES',
+  meta: {keepAlive: '', href: '', title: '地图', index: '1-1'}
+}, {
+  path: 'resource-manage/resource',
+  component: resorce,
+  name: 'RESORCE',
+  meta: {keepAlive: '', href: '', title: '裁切', index: '1-2'}
 }]

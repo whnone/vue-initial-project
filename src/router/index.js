@@ -1,25 +1,48 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import commonRotus from './common-manage'
-import productRotus from './product-manage'
-import resourceRoutes from './resource-manage'
-import editorRoutes from './editor-manage'
+import { langs } from '../config'
+
+import Home from '../pages/home.vue'
+
 import mapRoutes from './map-manage'
+import productRotus from './product-manage'
+import editorRoutes from './editor-manage'
 import form from './form-manage'
+
+const login = r => require.ensure([], () => r(require('@/pages/login')), 'LOGIN')
 
 Vue.use(Router)
 
-const routes = []
+// 初始化路由
+let routes = [{
+  path: '/',
+  redirect: `/${langs[0]}/login`
+}, {
+  path: `/${langs[0]}/`,
+  redirect: `/${langs[0]}/login`
+}, {
+  path: '*',
+  redirect: `/${langs[0]}/login`
+}]
 
-routes.push(...[
-  ...commonRotus,
-  ...productRotus,
-  ...resourceRoutes,
-  ...editorRoutes,
-  ...mapRoutes,
-  ...form
-])
+// 多语言路由
+langs.forEach((item, index) => {
+  routes = routes.concat([{
+    path: `/${item}/login`,
+    component: login,
+    meta: { href: '', title: '登录', name: 'LOGIN' }
+  }, {
+    path: `/${item}`,
+    component: Home,
+    children: [
+      ...productRotus,
+      ...editorRoutes,
+      ...mapRoutes,
+      ...form
+    ]
+  }])
+})
 
 // 路由配置
 const router = new Router({

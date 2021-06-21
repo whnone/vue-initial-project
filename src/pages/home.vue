@@ -1,28 +1,65 @@
+<template>
+    <el-container style="height: 97vh; border: 1px solid #eee">
+        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+            <div class="avatar-box">
+                <el-avatar :src="avatar"></el-avatar>
+            </div>
+            <el-menu :default-active="active" active-text-color="red" text-color="blue">
+                <el-submenu v-for="(item, index) in Menus" :key="index" :index="item.index">
+                    <template slot="title">
+                        <i :class="`el-icon-${item.icon}`"></i>{{item.title}}
+                    </template>
+                    <router-link v-for="(subItem, subIndex) in item.subMenus" :key="subIndex" :index="subItem.index" :to="`/${$lang}/${subItem.url}`">
+                        <el-menu-item>{{subItem.title}}</el-menu-item>
+                    </router-link>
+                </el-submenu>
+            </el-menu>
+        </el-aside>
 
-<template lang="jade">
-  div.wrap
-    h1.wrapTitle(
-      @click="toPro"
-    ) aa
+        <el-container>
+            <el-header style="text-align: right; font-size: 14px">
+                <span>Neo</span>
+            </el-header>
+
+            <el-main>
+                <router-view></router-view>
+            </el-main>
+        </el-container>
+    </el-container>
 </template>
 <script>
+import avatar from '../assets/images/avatar.jpeg'
+import {Menus} from '../config'
 export default {
-  data () {
-    return {
-      Menus: []
+    data() {
+        return {
+            avatar,
+            Menus
+        }
+    },
+    computed: {
+        active: function() {
+            console.log(this.$route.meta.index)
+            return this.$route.meta.index
+        }
     }
-  },
-  methods: {
-    toPro () {
-      this.$router.push('./product-manage/list')
-    }
-  }
 }
 </script>
-<style lang="scss" scoped>
-  .wrap{
-    .wrapTitle{
-      color: red;
-    }
-  }
+
+<style>
+.avatar-box{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+.el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
+}
+.el-aside {
+    color: #333;
+}
 </style>

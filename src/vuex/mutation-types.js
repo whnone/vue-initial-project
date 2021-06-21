@@ -1,0 +1,6 @@
+export const SET_TEST = 'SET_TEST'
+export const SET_WECHATID = 'SET_WECHATID'
+export const LOGIN = 'LOGIN'
+export const LANGUAGE = 'LANGUAGE'
+export const BRAND_LOGO = 'BRAND_LOGO'
+export const BRAND_FAVICON = 'BRAND_FAVICON'

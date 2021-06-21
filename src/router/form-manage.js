@@ -1,11 +1,11 @@
 /**
  * 引入组件文件-配置路由
  */
-import form from '../pages/form-manage/form'
+const formBase = r => require.ensure([], () => r(require('@/pages/form-manage/form')), 'FORM_BASE')
 
 export default [{
-  path: '/pages/form-manage/form',
-  component: form,
-  name: 'FORM',
-  meta: {keepAlive: '', href: '', title: '表单', index: '01'}
+  path: 'form-manage/form',
+  component: formBase,
+  name: 'FORM_BASE',
+  meta: {keepAlive: '', href: '', title: '表单', index: '3-1'}
 }]

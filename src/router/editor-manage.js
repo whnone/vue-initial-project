@@ -5,13 +5,13 @@ const editorBase = r => require.ensure([], () => r(require('@/pages/editor-manag
 const editorQuill = r => require.ensure([], () => r(require('@/pages/editor-manage/editor-quill')), 'EDITOR_QUILL')
 
 export default [{
-  path: 'editor-manage/editor',
-  component: editorBase,
-  name: 'EDITOR_BASE',
-  meta: {keepAlive: '', href: '', title: '富文本编辑器1', index: '2-1'}
-}, {
   path: 'editor-manage/editor-quill',
   component: editorQuill,
   name: 'EDITOR_QUILL',
-  meta: {keepAlive: '', href: '', title: '富文本编辑器2', index: '2-2'}
+  meta: {keepAlive: '', href: '', title: '富文本1.0', index: '2-1'}
+}, {
+  path: 'editor-manage/editor',
+  component: editorBase,
+  name: 'EDITOR_BASE',
+  meta: {keepAlive: '', href: '', title: '富文本2.0', index: '2-2'}
 }]

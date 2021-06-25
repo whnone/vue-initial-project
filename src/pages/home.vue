@@ -9,8 +9,8 @@
                     <template slot="title">
                         <i :class="`el-icon-${item.icon}`"></i>{{item.title}}
                     </template>
-                    <router-link v-for="(subItem, subIndex) in item.subMenus" :key="subIndex" :index="subItem.index" :to="`/${$lang}/${subItem.url}`">
-                        <el-menu-item>{{subItem.title}}</el-menu-item>
+                    <router-link v-for="(subItem, subIndex) in item.subMenus" :key="subIndex" :to="`/${$lang}/${subItem.url}`">
+                        <el-menu-item :index="subItem.index">{{subItem.title}}</el-menu-item>
                     </router-link>
                 </el-submenu>
             </el-menu>

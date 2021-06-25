@@ -40,7 +40,6 @@ function isCommonRoutes(to) {
 }
 
 router.beforeEach((to, from, next) => {
-  console.log('router->', to)
   next()
   // if (isCommonRoutes(to)) {
   //   next()

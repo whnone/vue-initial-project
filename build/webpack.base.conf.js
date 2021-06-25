@@ -47,6 +47,10 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
+        test: /\.jade$/,
+        loader: "jade"
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
@@ -74,6 +78,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: 'sass-loader!style-loader!css-loader',
       }
     ]
   },

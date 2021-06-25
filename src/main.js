@@ -7,7 +7,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import VueCropper from 'vue-cropper'
-import formComponent from './components/A-form'
 
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
@@ -25,11 +24,6 @@ Vue.use(ElementUI)
 Vue.use(VueCropper)
 sync(store, router)
 
-// 全局组件注册
-Object.keys(formComponent).forEach((key) => {
-  Vue.component(key, formComponent[key])
-})
-
 // 无需验证的公共资源路径
 function isCommonRoutes(to) {
   return (
@@ -40,12 +34,11 @@ function isCommonRoutes(to) {
 }
 
 router.beforeEach((to, from, next) => {
-  next()
-  // if (isCommonRoutes(to)) {
-  //   next()
-  // } else {
-  //   next()
-  // }
+  if (isCommonRoutes(to)) {
+    next()
+  } else {
+    next()
+  }
 })
 
 /* eslint-disable no-new */

@@ -32,6 +32,10 @@ export const Menus = [{
             title: '图片裁切',
             index: '1-2',
             url: 'resource-manage/resource'
+        }, {
+            title: '测试jade',
+            index: '1-3',
+            url: 'resource-manage/testjade'
         }]
     }, {
         title: '富文本',
@@ -46,16 +50,6 @@ export const Menus = [{
             title: '富文本2.0',
             index: '2-2',
             url: 'editor-manage/editor'
-        }]
-    }, {
-        title: '表单',
-        icon: 'message',
-        index: '3',
-        url: '',
-        subMenus: [{
-            title: 'form表单',
-            index: '3-1',
-            url: 'form-manage/form'
         }]
     }
 ]

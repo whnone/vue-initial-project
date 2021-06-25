@@ -8,7 +8,6 @@ import Home from '../pages/home.vue'
 import mapRoutes from './map-manage'
 import productRotus from './product-manage'
 import editorRoutes from './editor-manage'
-import form from './form-manage'
 
 const login = r => require.ensure([], () => r(require('@/pages/login')), 'LOGIN')
 
@@ -38,8 +37,7 @@ langs.forEach((item, index) => {
     children: [
       ...productRotus,
       ...editorRoutes,
-      ...mapRoutes,
-      ...form
+      ...mapRoutes
     ]
   }])
 })

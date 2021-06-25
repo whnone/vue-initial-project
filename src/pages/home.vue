@@ -4,7 +4,7 @@
             <div class="avatar-box">
                 <el-avatar :src="avatar"></el-avatar>
             </div>
-            <el-menu :default-active="active" active-text-color="red" text-color="blue">
+            <el-menu :default-active="active">
                 <el-submenu v-for="(item, index) in Menus" :key="index" :index="item.index">
                     <template slot="title">
                         <i :class="`el-icon-${item.icon}`"></i>{{item.title}}
@@ -17,7 +17,8 @@
         </el-aside>
 
         <el-container>
-            <el-header style="text-align: right; font-size: 14px">
+            <el-header>
+                <span>{{$route.meta.title}}</span>
                 <span>Neo</span>
             </el-header>
 
@@ -46,7 +47,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .avatar-box{
     box-sizing: border-box;
     display: flex;
@@ -55,9 +56,17 @@ export default {
     padding: 10px 0;
 }
 .el-header {
-    background-color: #B3C0D1;
-    color: #333;
     line-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+    background-color: #B3C0D1;
+}
+.el-menu a{
+    text-decoration: none;
 }
 .el-aside {
     color: #333;

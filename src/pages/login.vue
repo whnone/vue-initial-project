@@ -1,9 +1,11 @@
-<template>
-    <div id="login">
-        <div>
-            <img class="login-bk" :src="bkUrl" title="黑岩" @click="login">
-        </div>
-    </div>
+<template lang="jade">
+    div#login
+        div
+            img.login-bk(
+                :src="bkUrl"
+                title="黑岩"
+                @click="login"
+            )
 </template>
 <script>
 import bkUrl from '../assets/images/BR-SHOOTER.jpg'

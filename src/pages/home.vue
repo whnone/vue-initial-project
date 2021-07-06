@@ -44,7 +44,6 @@ export default {
     },
     computed: {
         active: function() {
-            console.log(this.$route.meta.index)
             return this.$route.meta.index
         }
     }

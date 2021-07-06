@@ -32,10 +32,6 @@ export const Menus = [{
             title: '图片裁切',
             index: '1-2',
             url: 'resource-manage/resource'
-        }, {
-            title: '测试jade',
-            index: '1-3',
-            url: 'resource-manage/testjade'
         }]
     }, {
         title: '富文本',

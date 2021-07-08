@@ -25,9 +25,13 @@
                         el-menu-item(:index="subItem.index") {{subItem.title}}
 
         el-container
-            el-header
+            el-header.el-header
                 span {{$route.meta.title}}
-                span Neo
+                span
+                    el-button.login-out(
+                        @click="loginOut"
+                    ) 登出
+                    span Neo
 
             el-main
                 router-view
@@ -45,6 +49,14 @@ export default {
     computed: {
         active: function() {
             return this.$route.meta.index
+        }
+    },
+    methods: {
+        loginOut () {
+            this.$message.success('登出成功')
+            setTimeout(() => {
+                this.$router.replace(`/${this.$lang}/login`)
+            }, 500)
         }
     }
 }
@@ -73,5 +85,9 @@ export default {
 }
 .el-aside {
     color: #333;
+}
+.el-header .login-out{
+    background-color: #B3C0D1;
+    border-color: #B3C0D1;
 }
 </style>

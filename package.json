@@ -14,15 +14,18 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "element-ui": "^2.9.1",
     "express": "^4.17.1",
     "highlight.js": "^9.15.10",
     "jade": "^1.11.0",
     "qqmap": "^1.0.1",
+    "qs.js": "^0.1.12",
     "quill-image-drop-module": "^1.0.3",
     "quill-image-resize-module": "^3.0.0",
     "vm-editor": "^0.1.6",
     "vue": "^2.5.2",
+    "vue-axios": "^3.2.4",
     "vue-cropper": "^0.5.6",
     "vue-i18n": "^8.24.4",
     "vue-quill-editor": "^3.0.6",

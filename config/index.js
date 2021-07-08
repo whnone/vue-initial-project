@@ -3,43 +3,39 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+const target = 'https://dev.estore.d1m.cn'
 
 module.exports = {
   dev: {
-
-    // Paths
+    autoOpenBrowser: true,
+    host: 'localhost', // can be overwritten by process.env.HOST
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    port: 8075,
+    
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8075, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
-    errorOverlay: true,
-    notifyOnErrors: true,
-    poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
-
-    // Use Eslint Loader?
-    // If true, your code will be linted during bundling and
-    // linting errors and warnings will be shown in the console.
-    useEslint: true,
-    // If true, eslint errors and warnings will also be shown in the error overlay
-    // in the browser.
-    showEslintErrorsInOverlay: false,
-
-    /**
-     * Source Maps
-     */
-
-    // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
-
-    // If you have problems debugging vue-files in devtools,
-    // set this to false - it *may* help
-    // https://vue-loader.vuejs.org/en/options.html#cachebusting
-    cacheBusting: true,
-
+    proxyTable: {
+      "/manage": {
+        target,
+        changeOrigin: true,
+        pathRewrite: {},
+        onProxyReq: function(proxyReq, req, res) {}
+      },
+      "/auth/manage": {
+        target,
+        changeOrigin: true,
+        pathRewrite: {},
+        onProxyReq: function(proxyReq, req, res) {}
+      }
+    },
+    // host: 'localhost', // can be overwritten by process.env.HOST
+    // errorOverlay: true,
+    // notifyOnErrors: true,
+    // poll: false,
+    // useEslint: true,
+    // showEslintErrorsInOverlay: false,
+    // devtool: 'cheap-module-eval-source-map',
+    // cacheBusting: true,
     cssSourceMap: true
   },
 

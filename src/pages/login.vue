@@ -1,11 +1,11 @@
 <template lang="jade">
     div#login
         div.login-back
-            //- img.login-bk(
-            //-     :src="bkUrl"
-            //-     title="黑岩"
-            //-     @click="login"
-            //- )
+            img.login-bk(
+                :src="bkUrl"
+                title="黑岩"
+                @click="login"
+            )
             div.login-content
                 el-form(
                     ref="ruleForm",

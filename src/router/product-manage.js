@@ -6,6 +6,5 @@ const productList = r => require.ensure([], () => r(require('@/pages/product-man
 export default [{
   path: 'product-manage/list',
   component: productList,
-  name: 'PRODUCT_LIST',
-  meta: {keepAlive: '', href: '', title: '商品列表', index: ''}
+  meta: {keepAlive: '', href: '', name: 'PRODUCT_LIST', title: '商品列表', index: ''}
 }]

@@ -9,11 +9,9 @@ const resorce = r => require.ensure([], () => r(require('@/pages/resource-manage
 export default [{
   path: 'map-manage/map',
   component: map,
-  name: 'MAP_PAGES',
-  meta: {keepAlive: '', href: '', title: '地图', index: '1-1'}
+  meta: {keepAlive: '', href: '', name: 'MAP_PAGES', title: '地图', index: '1-1'}
 }, {
   path: 'resource-manage/resource',
   component: resorce,
-  name: 'RESORCE',
-  meta: {keepAlive: '', href: '', title: '裁切', index: '1-2'}
+  meta: {keepAlive: '', href: '', name: 'RESORCE', title: '裁切', index: '1-2'}
 }]

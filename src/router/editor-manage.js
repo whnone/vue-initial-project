@@ -7,11 +7,9 @@ const editorQuill = r => require.ensure([], () => r(require('@/pages/editor-mana
 export default [{
   path: 'editor-manage/editor-quill',
   component: editorQuill,
-  name: 'EDITOR_QUILL',
-  meta: {keepAlive: '', href: '', title: '富文本1.0', index: '2-1'}
+  meta: {keepAlive: '', href: '', name: 'EDITOR_QUILL', title: '富文本1.0', index: '2-1'}
 }, {
   path: 'editor-manage/editor',
   component: editorBase,
-  name: 'EDITOR_BASE',
-  meta: {keepAlive: '', href: '', title: '富文本2.0', index: '2-2'}
+  meta: {keepAlive: '', href: '', name: 'EDITOR_BASE', title: '富文本2.0', index: '2-2'}
 }]

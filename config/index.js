@@ -28,14 +28,13 @@ module.exports = {
         onProxyReq: function(proxyReq, req, res) {}
       }
     },
-    // host: 'localhost', // can be overwritten by process.env.HOST
     // errorOverlay: true,
     // notifyOnErrors: true,
-    // poll: false,
     // useEslint: true,
     // showEslintErrorsInOverlay: false,
-    // devtool: 'cheap-module-eval-source-map',
-    // cacheBusting: true,
+    poll: false,
+    devtool: 'cheap-module-eval-source-map',
+    cacheBusting: true,
     cssSourceMap: true
   },
 

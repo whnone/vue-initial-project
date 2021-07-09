@@ -41,9 +41,9 @@ export default {
     },
     methods: {
         async submit() {
-            const {resultCode, data, message} = await api.authLogin(this.form)
-            if (resultCode !== '1') return this.$message.error(message)
-            this.$message.success('登录成功')
+            // const {resultCode, data, message} = await api.authLogin(this.form)
+            // if (resultCode !== '1') return this.$message.error(message)
+            // this.$message.success('登录成功')
             this.login()
         },
         login() {

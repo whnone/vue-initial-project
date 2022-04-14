@@ -2,6 +2,7 @@
 const path = require('path')
 const config = require('../config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const pxToViewport = require('postcss-px-to-viewport')
 const packageConfig = require('../package.json')
 
 exports.assetsPath = function (_path) {
@@ -60,7 +61,20 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    scss: generateLoaders('sass', {
+      ident: 'postcss',
+      plugins: () => {
+        pxToViewport({
+          viewportWidth: 750,
+          viewportHeight: 1334,
+          unitPrecision: 3,
+          viewportUnit: 'vw',
+          selectorBalckList: ['.ignore'],
+          minPixeValue: 1,
+          mediaQuery: false
+        })
+      }
+    }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

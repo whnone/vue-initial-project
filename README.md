@@ -1,4 +1,4 @@
-# vue-initial-project
+# vue-project
 
 > test-project
 

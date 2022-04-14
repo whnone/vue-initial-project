@@ -3,42 +3,33 @@ import Router from 'vue-router'
 
 import { langs } from '../config'
 
-import Home from '../pages/home.vue'
-
-import mapRoutes from './map-manage'
-import productRotus from './product-manage'
-import editorRoutes from './editor-manage'
-
-const login = r => require.ensure([], () => r(require('@/pages/login')), 'LOGIN')
+const Home = r => require.ensure([], () => r(require('@/pages/home')), 'LOGIN')
+const RES = r => require.ensure([], () => r(require('@/pages/res')), 'RES')
 
 Vue.use(Router)
 
 // 初始化路由
 let routes = [{
   path: '/',
-  redirect: `/${langs[0]}/login`
+  redirect: `/${langs[0]}/home`
 }, {
   path: `/${langs[0]}/`,
-  redirect: `/${langs[0]}/login`
+  redirect: `/${langs[0]}/home`
 }, {
   path: '*',
-  redirect: `/${langs[0]}/login`
+  redirect: `/${langs[0]}/home`
 }]
 
 // 多语言路由
 langs.forEach((item, index) => {
   routes = routes.concat([{
-    path: `/${item}/login`,
-    component: login,
-    meta: { href: '', title: '登录', name: 'LOGIN' }
-  }, {
-    path: `/${item}`,
+    path: `/${item}/home`,
     component: Home,
-    children: [
-      ...productRotus,
-      ...editorRoutes,
-      ...mapRoutes
-    ]
+    meta: { href: '', title: '首页', name: 'LOGIN' }
+  }, {
+    path: `/${item}/res`,
+    component: RES,
+    meta: { href: '', title: '结果', name: 'RES' }
   }])
 })
 

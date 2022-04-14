@@ -58,9 +58,7 @@ export default {
     // `validateStatus` 定义对于给定的HTTP 响应状态码是 resolve 或 reject  promise 。
     // 如果 `validateStatus` 返回 `true` (或者设置为 `null` 或 `undefined`)，
     // promise 将被 resolve; 否则，promise 将被 rejecte
-    validateStatus: (status) => {
-        return status >= 200 && status < 300
-    },
+    // validateStatus: true,
 
     // `maxRedirects` 定义在 node.js 中 follow 的最大重定向数目
     maxRedirects: 5

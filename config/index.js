@@ -1,30 +1,26 @@
 'use strict'
+const HOST = require('ip').address() || 'localhost'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-const target = 'https://dev.estore.d1m.cn'
+const target = 'https://wxminiec-dev.mybeautybox.cn'
+// "prod" ? "https://wxminiec.mybeautybox.cn" : 'https://wxminiec-dev.mybeautybox.cn',
 
 module.exports = {
   dev: {
     autoOpenBrowser: true,
-    host: 'localhost', // can be overwritten by process.env.HOST
+    // host: 'localhost', // can be overwritten by process.env.HOST
+    host: HOST, // can be overwritten by process.env.HOST
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    port: 8075,
+    port: 8080,
     
     // Various Dev Server settings
     proxyTable: {
-      "/manage": {
+      "/api": {
         target,
         changeOrigin: true,
-        pathRewrite: {},
-        onProxyReq: function(proxyReq, req, res) {}
-      },
-      "/auth/manage": {
-        target,
-        changeOrigin: true,
-        pathRewrite: {},
         onProxyReq: function(proxyReq, req, res) {}
       }
     },
@@ -45,7 +41,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps

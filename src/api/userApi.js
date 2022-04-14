@@ -3,18 +3,17 @@ import request from "./fetch/request.js"
 export default {
 
     /**
-     * 登录1.0
+     * 提交用户数据
      */
-    login(options) {
-        return request('/admin/login', 'post', options)
+    addUser(options) {
+        return request('/extra-portal/store/mbb/cdk/submit', 'post', options)
     },
 
     /**
-     * 登录2.0
-     * @param {*} options 
-     * @returns {token, wechatId, auth}
+     * 校验来源code
      */
-    authLogin(options) {
-        return request('/onLogin', 'post', options, '', 'auth/manage/', 20000, 'json')
-    }
+    checkSourceCode(query) {
+        return request(`/extra-portal/store/mbb/cdk/getCodeItem/${query.code}`, 'get')
+    },
+
 }
